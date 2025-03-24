@@ -79,3 +79,6 @@ def del_instrumento(query: InstrumentoBuscaSchema):
         return {"mensagem": "Instrumento removido", "tag": tag}, 200
     else:
         return {"message": "Instrumento não encontrado."}, 404
+
+if __name__ == "__main__":
+    app.run(debug=True)
