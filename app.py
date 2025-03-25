@@ -26,9 +26,9 @@ def add_instrumento(form: InstrumentoSchema):
     try:
         instrumento = Instrumento(
             tag=form.tag,
-            urv=form.urv,
             lrv=form.lrv,
-            span=form.span,
+            urv=form.urv,
+            span=form.urv - form.lrv,
             data_loop=form.data_loop
         )
         session = Session()
@@ -51,8 +51,8 @@ def get_instrumentos():
         "instrumentos": [
             {
                 "tag": inst.tag,
-                "urv": inst.urv,
                 "lrv": inst.lrv,
+                "urv": inst.urv,
                 "span": inst.span,
                 "data_loop": inst.data_loop.isoformat()
             } for inst in instrumentos
