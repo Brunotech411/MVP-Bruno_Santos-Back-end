@@ -22,14 +22,14 @@ def home():
 
 @app.post('/instrumento', tags=[instrumento_tag],
           responses={"200": InstrumentoViewSchema, "409": ErrorSchema, "400": ErrorSchema})
-def add_instrumento(form: InstrumentoSchema):
+def add_instrumento(body: InstrumentoSchema):
     try:
         instrumento = Instrumento(
-            tag=form.tag,
-            lrv=form.lrv,
-            urv=form.urv,
-            span=form.urv - form.lrv,
-            data_loop=form.data_loop
+            tag=body.tag,
+            lrv=body.lrv,
+            urv=body.urv,
+            span=body.urv - body.lrv,
+            data_loop=body.data_loop
         )
         session = Session()
         session.add(instrumento)
