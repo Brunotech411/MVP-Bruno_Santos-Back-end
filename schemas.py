@@ -1,15 +1,25 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 from typing import List
 from datetime import date
 
 class InstrumentoSchema(BaseModel):
-    tag: str = Field(..., example="TIT-2042")
-    lrv: float = Field(..., example=0.0)
-    urv: float = Field(..., example=150.0)
-    data_loop: date = Field(..., example="2025-03-22")
+    tag: str
+    lrv: float
+    urv: float
+    data_loop: date
+
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "tag": "TIT-2042",
+                "lrv": 0.0,
+                "urv": 150.0,
+                "data_loop": "2025-03-22"
+            }
+        }
 
 class InstrumentoBuscaSchema(BaseModel):
-    tag: str = Field(..., example="TIT-2042")
+    tag: str
 
 class InstrumentoViewSchema(BaseModel):
     tag: str
