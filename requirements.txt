@@ -1,5 +1,5 @@
-flask==2.3.3
-flask-openapi3==1.1.5
-flask-cors==4.0.0
-sqlalchemy==2.0.25
-pydantic==1.10.13
+flask
+flask-openapi3
+flask-cors
+sqlalchemy
+pydantic
