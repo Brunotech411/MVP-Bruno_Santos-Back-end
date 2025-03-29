@@ -1,4 +1,4 @@
-from flask_openapi3 import OpenAPI, Info, Tag
+from flask_openapi3 import OpenAPI, Info, Tag, Form
 from flask import redirect
 from urllib.parse import unquote
 from flask_cors import CORS
@@ -22,23 +22,29 @@ def home():
 
 @app.post('/instrumento', tags=[instrumento_tag],
           responses={"200": InstrumentoViewSchema, "409": ErrorSchema, "400": ErrorSchema})
-def add_instrumento(body: InstrumentoSchema):
+def add_instrumento(
+    tag: str = Form(..., description="TAG do instrumento", example="PIT-3001"),
+    lrv: float = Form(..., description="Valor LRV", example=0.0),
+    urv: float = Form(..., description="Valor URV", example=150.0),
+    data_loop: str = Form(..., description="Data do loop", example="2025-03-22")
+):
     try:
         instrumento = Instrumento(
-            tag=body.tag,
-            lrv=body.lrv,
-            urv=body.urv,
-            span=body.urv - body.lrv,
-            data_loop=body.data_loop
+            tag=tag,
+            lrv=lrv,
+            urv=urv,
+            span=urv - lrv,
+            data_loop=data_loop
         )
         session = Session()
         session.add(instrumento)
         session.commit()
         return instrumento.__dict__, 200
+
     except IntegrityError:
         return {"message": "Instrumento com esta TAG já está cadastrado."}, 409
-    except Exception:
-        return {"message": "Erro ao tentar salvar o instrumento."}, 400
+    except Exception as e:
+        return {"message": f"Erro ao tentar salvar: {str(e)}"}, 400
 
 @app.get('/instrumentos', tags=[instrumento_tag],
          responses={"200": ListagemInstrumentosSchema, "404": ErrorSchema})

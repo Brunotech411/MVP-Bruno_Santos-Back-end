@@ -1,5 +1,5 @@
 flask
-flask-openapi3
+flask-openapi3[swagger]
 flask-cors
 sqlalchemy
 pydantic
