@@ -1,17 +1,13 @@
-from schemas.instrumento import InstrumentoOut, InstrumentoListOut
+from schemas.instrumento import InstrumentoOut
 
-def apresenta_instrumento(instrumento) -> InstrumentoOut:
-    """Retorna os dados de um instrumento no formato esperado pelo schema"""
+def apresenta_instrumento(inst):
     return InstrumentoOut(
-        tag=instrumento.tag,
-        lrv=instrumento.lrv,
-        urv=instrumento.urv,
-        span=instrumento.span,
-        data_loop=instrumento.data_loop
+        tag=inst.tag,
+        lrv=inst.lrv,
+        urv=inst.urv,
+        span=inst.urv - inst.lrv,
+        data_loop=inst.data_loop
     )
 
-def apresenta_instrumentos(lista) -> InstrumentoListOut:
-    """Retorna a lista de instrumentos no formato esperado pelo schema"""
-    return InstrumentoListOut(instrumentos=[
-        apresenta_instrumento(i) for i in lista
-    ])
+def apresenta_instrumentos(lista):
+    return {"instrumentos": [apresenta_instrumento(i) for i in lista]}
