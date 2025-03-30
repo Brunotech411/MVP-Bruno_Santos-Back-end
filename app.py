@@ -1,5 +1,7 @@
 from flask_openapi3 import OpenAPI, Info, Tag
-from flask_openapi3.models.parameters import Form
+from flask_openapi3.models.security import HTTPBearer
+from flask_openapi3 import Body
+from flask_openapi3 import Form as FormInput
 from flask import redirect
 from urllib.parse import unquote
 from flask_cors import CORS
@@ -24,10 +26,10 @@ def home():
 @app.post('/instrumento', tags=[instrumento_tag],
           responses={"200": InstrumentoViewSchema, "409": ErrorSchema, "400": ErrorSchema})
 def add_instrumento(
-    tag: str = Form(..., description="TAG do instrumento", example="PIT-3001"),
-    lrv: float = Form(..., description="Valor LRV", example=0.0),
-    urv: float = Form(..., description="Valor URV", example=150.0),
-    data_loop: str = Form(..., description="Data do loop", example="2025-03-22")
+    tag: str = FormInput(..., description="TAG do instrumento", example="PIT-3001"),
+    lrv: float = FormInput(..., description="Valor LRV", example=0.0),
+    urv: float = FormInput(..., description="Valor URV", example=150.0),
+    data_loop: str = FormInput(..., description="Data do loop", example="2025-03-22")
 ):
     try:
         instrumento = Instrumento(
