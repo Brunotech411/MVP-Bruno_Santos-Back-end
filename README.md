@@ -1,4 +1,4 @@
-# API - Cadastro de Instrumentos (Loop Teste)
+# API - Cadastro de Instrumentos (Loop Teste concluído)
 
 API para cadastro de instrumentos utilizados em testes de loop no comissionamento de tanques separadores.
 
