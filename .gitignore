@@ -7,3 +7,9 @@ __pycache__/
 
 # Ignorar IDEs
 .vscode/
+
+# Arquivos de log e cache
+*.log
+*.bak
+*.tmp
+*.swp
