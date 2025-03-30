@@ -1,5 +1,5 @@
 # Ignorar ambiente virtual
-v_venv_api/
+venv/
 
 # Ignorar arquivos de cache
 __pycache__/
