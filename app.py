@@ -1,4 +1,5 @@
-from flask_openapi3 import OpenAPI, Info, Tag, Form
+from flask_openapi3 import OpenAPI, Info, Tag
+from flask_openapi3.models.parameters import Form
 from flask import redirect
 from urllib.parse import unquote
 from flask_cors import CORS
