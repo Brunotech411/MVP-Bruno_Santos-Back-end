@@ -1,29 +1,35 @@
-🔧 API de Instrumentação - Loop Teste
+# 🔧 API de Instrumentação - Loop Teste
 
-Este é o back-end do MVP da sprint desenvolvimento Full Stack básico (PUC-Rio). A API permite o cadastro, listagem, busca e remoção de instrumentos com loop test concluído, incluindo o cálculo automático do SPAN (URV - LRV). 
-OBS: o foco do loop test são instrumentos de medição das grandezas nível(LIT), pressão(PIT), vazão(FIT) e temperatura(TIT) de uma planta de processo qualquer.
-A atividade loop teste consiste na verificação de indicação correta em uma sala de controle o que confirma o funcionamento do instrumento e conclui o comissionamento, liberando o mesmo para a operação.
+Este é o back-end do MVP da sprint desenvolvimento Full Stack básico (PUC-Rio). A API permite o cadastro, listagem, busca e remoção de instrumentos com loop test concluído, incluindo o cálculo automático do SPAN (URV - LRV).
 
+📌 **OBS**: o foco do loop test são instrumentos de medição das grandezas nível (LIT), pressão (PIT), vazão (FIT) e temperatura (TIT) de uma planta de processo qualquer. A atividade de loop teste consiste na verificação da indicação correta em uma sala de controle, o que confirma o funcionamento do instrumento e conclui o comissionamento, liberando-o para operação.
 
+---
 
-✅ Funcionalidades
-📥 Cadastrar novos instrumentos
-📃 Listar todos os instrumentos
-🔍 Buscar instrumento por TAG
-🗑️ Remover instrumento por TAG
-📐 Calcular e armazenar automaticamente o campo span
+## ✅ Funcionalidades
 
+- 📥 Cadastrar novos instrumentos
+- 📃 Listar todos os instrumentos
+- 🔍 Buscar instrumento por TAG
+- 🗑️ Remover instrumento por TAG
+- 📐 Calcular e armazenar automaticamente o campo `span`
 
-⚙️ Tecnologias utilizadas
-Python 3.11+
-Flask 2.1.3
-flask-openapi3 2.1.0
-Flask-CORS
-SQLAlchemy
-SQLite
+---
 
+## ⚙️ Tecnologias utilizadas
 
-📁 Estrutura do projeto
+- Python 3.11+
+- Flask 2.1.3
+- flask-openapi3 2.1.0
+- Flask-CORS
+- SQLAlchemy
+- SQLite
+
+---
+
+## 📁 Estrutura do projeto
+
+```
 MVP-Bruno_Santos-Back-end/
 │
 ├── app.py                  # Aplicação principal Flask
@@ -46,50 +52,68 @@ MVP-Bruno_Santos-Back-end/
 ├── routes/
 │   └── instrumento.py     # Rotas organizadas por blueprint
 │
-├── v_env1_api/            # Ambiente virtual (não versionado)
+└── v_env1_api/            # Ambiente virtual (não versionado)
+```
 
+---
 
-🧪 Como rodar o projeto
+## 🧪 Como rodar o projeto
 
-1. Clone o repositório
+### 1. Clone o repositório
+```bash
 git clone https://github.com/Brunotech411/MVP-Bruno_Santos-Back-end
+cd MVP-Bruno_Santos-Back-end
+```
 
-2. Crie e ative o ambiente virtual
+### 2. Crie e ative o ambiente virtual
+```bash
 python -m venv v_env1_api
 ._env1_api\Scriptsctivate
+```
 
-3. Instale as dependências
+### 3. Instale as dependências
+```bash
 pip install -r requirements.txt
+```
 
-4. Crie a base de dados
+### 4. Crie a base de dados
+```bash
 python create_db.py
+```
 
-5. Rode a aplicação
+### 5. Rode a aplicação
+```bash
 python app.py
+```
 
-📚 Documentação Swagger
+---
+
+## 📚 Documentação Swagger
+
 Após iniciar o servidor, acesse:
 
-👉 http://localhost:5000/openapi
+👉 **http://localhost:5000/openapi**
 
 Você poderá testar todas as rotas diretamente no navegador.
 
-🔄 Rotas disponíveis
-POST /instrumento
-Cadastrar um novo instrumento.
+---
 
-GET /instrumentos
-Listar todos os instrumentos cadastrados.
+## 🔄 Rotas disponíveis
 
-GET /instrumento
-Buscar um instrumento por TAG.
+- **POST** `/instrumento` — Cadastrar um novo instrumento
+- **GET** `/instrumentos` — Listar todos os instrumentos cadastrados
+- **GET** `/instrumento` — Buscar um instrumento por TAG
+- **DELETE** `/instrumento` — Remover um instrumento por TAG
 
-DELETE /instrumento
-Remover um instrumento por TAG.
+---
 
-🧠 Observações técnicas
-A coluna span é calculada automaticamente (urv - lrv) e armazenada no banco de dados.
+## 🧠 Observações técnicas
 
-🙌 Autor
-Bruno Leonardo Ramos dos Santos
-LinkedIn: https://www.linkedin.com/in/bruno-leonardo-ramos-dos-santos-31734b3a/
+- A coluna `span` é calculada automaticamente (`urv - lrv`) e armazenada no banco de dados.
+
+---
+
+## 🙌 Autor
+
+Bruno Leonardo Ramos dos Santos  
+🔗 [LinkedIn](https://www.linkedin.com/in/bruno-leonardo-ramos-dos-santos-31734b3a/)
