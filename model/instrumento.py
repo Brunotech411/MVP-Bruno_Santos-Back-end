@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Float, Date
+from sqlalchemy import Column, String, Float
 from database.base import Base
 
 class Instrumento(Base):
@@ -7,4 +7,5 @@ class Instrumento(Base):
     tag = Column(String, primary_key=True)
     lrv = Column(Float, nullable=False)
     urv = Column(Float, nullable=False)
+    span = Column(Float,nullable=False)
     data_loop = Column(String, nullable=False)

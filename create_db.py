@@ -1,5 +1,5 @@
 # create_db.py
-from model.base import Base, engine
+from database.base import Base, engine
 from model.instrumento import Instrumento
 
 # Cria as tabelas no banco SQLite

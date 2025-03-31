@@ -1,10 +1,11 @@
 from flask_openapi3 import OpenAPI, Info, Tag
 from flask import redirect
 from flask_cors import CORS
+from routes.instrumento import routes
 from urllib.parse import unquote
 
 from model.instrumento import Instrumento
-from model.base import Session
+from database.base import Session
 
 from schemas.instrumento import (
     InstrumentoIn,
@@ -40,11 +41,12 @@ def add_instrumento(form: InstrumentoIn):
             tag=form.tag,
             lrv=form.lrv,
             urv=form.urv,
+            span=form.urv - form.lrv,
             data_loop=form.data_loop
         )
         session.add(instrumento)
         session.commit()
-        return apresenta_instrumento(instrumento).dict(), 200  # <- fix aqui
+        return apresenta_instrumento(instrumento), 200
     except Exception as e:
         return {"message": f"Erro ao salvar instrumento: {str(e)}"}, 400
 
@@ -55,7 +57,7 @@ def list_instrumentos():
     """Lista todos os instrumentos"""
     session = Session()
     instrumentos = session.query(Instrumento).all()
-    return apresenta_instrumentos(instrumentos).dict(), 200  # <- fix aqui
+    return apresenta_instrumentos(instrumentos), 200
 
 
 @app.get("/instrumento", tags=[instrumento_tag],
@@ -66,7 +68,7 @@ def get_instrumento(query: InstrumentoBusca):
     instrumento = session.query(Instrumento).filter_by(tag=query.tag).first()
     if not instrumento:
         return {"message": "Instrumento não encontrado"}, 404
-    return apresenta_instrumento(instrumento).dict(), 200
+    return apresenta_instrumento(instrumento), 200
 
 
 @app.delete("/instrumento", tags=[instrumento_tag],
