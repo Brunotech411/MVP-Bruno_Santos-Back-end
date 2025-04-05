@@ -1,6 +1,6 @@
 # 🔧 API de Instrumentação - Loop Teste
 
-Este é o back-end do MVP da sprint desenvolvimento Full Stack básico (PUC-Rio). A API permite o cadastro, listagem, busca e remoção de instrumentos com loop test concluído, incluindo o cálculo automático do SPAN (URV - LRV).
+Olá Mestres! Este é o back-end do MVP da sprint desenvolvimento Full Stack básico (PUC-Rio). A API permite o cadastro, listagem, busca e remoção de instrumentos com loop test concluído, incluindo o cálculo automático do SPAN (URV - LRV), por exemplo se o LRV de um transmissor de pressão é de 0 a 20bar significa que o Span é igual a 20bar.
 
 📌 **OBS**: o foco do loop test são instrumentos de medição das grandezas nível (LIT), pressão (PIT), vazão (FIT) e temperatura (TIT) de uma planta de processo qualquer. A atividade de loop teste consiste na verificação da indicação correta em uma sala de controle, o que confirma o funcionamento do instrumento e conclui o comissionamento, liberando-o para operação.
 
@@ -110,6 +110,9 @@ Você poderá testar todas as rotas diretamente no navegador.
 ## 🧠 Observações técnicas
 
 - A coluna `span` é calculada automaticamente (`urv - lrv`) e armazenada no banco de dados.
+- LRV = Low Range Value
+- URV = Upper Range Value
+- Para visualizar o conteúdo da base `instrumentos.db` em forma de tabela, recomenda-se instalar a extensão **SQLite Viewer** no VS Code.
 
 ---
 
