@@ -43,10 +43,11 @@ MVP-Bruno_Santos-Back-end/
 │   └── instrumento.py     # Rotas organizadas por blueprint
 │
 ├── schemas/
+│   ├── error.py           # Schema de erro padrão
 │   ├── instrumento.py     # Schemas Pydantic para entrada e saída
-│   ├── presenter.py       # Funções que formatam as respostas
-│   └── error.py           # Schema de erro padrão
+│   └── presenter.py       # Funções que formatam as respostas
 │
+├── gitignore
 ├── app.py                 # Aplicação principal Flask
 ├── create_db.py           # Criação da base de dados
 ├── instrumentos.db        # Banco SQLite (gerado automaticamente)
