@@ -1,8 +1,8 @@
-# 🔧 API de Instrumentação - Loop Teste
+# 🔧 API de Instrumentação - Loop Teste concluído
 
-Olá Mestres! Este é o back-end do MVP da sprint desenvolvimento Full Stack básico (PUC-Rio). A API permite o cadastro, listagem, busca e remoção de instrumentos com loop test concluído, incluindo o cálculo automático do SPAN (URV - LRV), por exemplo se o LRV de um transmissor de pressão é de 0 a 20bar significa que o Span é igual a 20bar.
+Olá Mestres! Este é o back-end do MVP da sprint desenvolvimento Full Stack Básico (PUC-Rio). A API permite o cadastro, listagem, busca e remoção de instrumentos com loop test concluído, ou seja testados, incluindo o cálculo automático do SPAN (URV - LRV), por exemplo se o LRV de um transmissor de pressão é de 0 a 20bar significa que o Span é igual a 20bar.
 
-📌 **OBS**: o foco do loop test são instrumentos de medição das grandezas nível (LIT), pressão (PIT), vazão (FIT) e temperatura (TIT) de uma planta de processo qualquer. A atividade de loop teste consiste na verificação da indicação correta em uma sala de controle, o que confirma o funcionamento do instrumento e conclui o comissionamento, liberando-o para operação.
+📌 **OBS**: o foco do loop test são os instrumentos de medição das grandezas: nível (LIT), pressão (PIT), vazão (FIT) e temperatura (TIT) de uma planta de processo qualquer. A atividade de loop teste consiste na verificação da indicação correta de um instrumento de campo na sala de controle através da simulação das grandezas medidas, o que confirma o funcionamento do instrumento e conclui o comissionamento, liberando-o para operação.
 
 ---
 
@@ -100,7 +100,7 @@ Você poderá testar todas as rotas diretamente no navegador.
 
 ## 🔄 Rotas disponíveis
 
-- **POST** `/instrumento` — Cadastrar um novo instrumento
+- **POST** `/instrumento` — Cadastrar um novo instrumento, por exemplo PIT-0001 ou TIT-0102
 - **GET** `/instrumentos` — Listar todos os instrumentos cadastrados
 - **GET** `/instrumento` — Buscar um instrumento por TAG
 - **DELETE** `/instrumento` — Remover um instrumento por TAG
