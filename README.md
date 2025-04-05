@@ -47,7 +47,7 @@ MVP-Bruno_Santos-Back-end/
 │   ├── instrumento.py     # Schemas Pydantic para entrada e saída
 │   └── presenter.py       # Funções que formatam as respostas
 │
-├── .gitignore
+├── .gitignore             # Ignora arquivos desnecessários no commit
 ├── Readme                 # Apresentação do projeto
 ├── app.py                 # Aplicação principal Flask
 ├── create_db.py           # Criação da base de dados
