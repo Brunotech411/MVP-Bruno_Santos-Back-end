@@ -31,28 +31,27 @@ Olá Mestres! Este é o back-end do MVP da sprint desenvolvimento Full Stack bá
 
 ```
 MVP-Bruno_Santos-Back-end/
-│
-├── app.py                  # Aplicação principal Flask
-├── create_db.py           # Criação da base de dados
-├── instrumentos.db        # Banco SQLite (gerado automaticamente)
-├── requirements.txt       # Dependências do projeto
-├── .gitignore             # Arquivos ignorados no versionamento
-│
+
 ├── database/
 │   └── base.py            # Configuração do SQLAlchemy (engine, session)
 │
 ├── model/
+│   ├── __init__.py        # Permite importação direta dos modelos do pacote
 │   └── instrumento.py     # Modelo da tabela de instrumentos
+│
+├── routes/
+│   └── instrumento.py     # Rotas organizadas por blueprint
 │
 ├── schemas/
 │   ├── instrumento.py     # Schemas Pydantic para entrada e saída
 │   ├── presenter.py       # Funções que formatam as respostas
 │   └── error.py           # Schema de erro padrão
 │
-├── routes/
-│   └── instrumento.py     # Rotas organizadas por blueprint
-│
-└── v_env1_api/            # Ambiente virtual (não versionado)
+├── app.py                 # Aplicação principal Flask
+├── create_db.py           # Criação da base de dados
+├── instrumentos.db        # Banco SQLite (gerado automaticamente)
+├── Readme                 # Apresentação do projeto
+├── requirements.txt       # Dependências do projeto
 ```
 
 ---
