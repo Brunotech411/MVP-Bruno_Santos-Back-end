@@ -1,2 +1,2 @@
-# Reexporta os módulos usados no app
+# Reexporta o modelo Instrumento ao importar o pacote model
 from .instrumento import Instrumento

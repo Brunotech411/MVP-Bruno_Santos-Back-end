@@ -1,5 +1,5 @@
 def apresenta_instrumento(inst):
-    """Retorna os dados de um instrumento como dicionário"""
+    # Apresenta um único instrumento como dicionário JSON
     return {
         "tag": inst.tag,
         "lrv": inst.lrv,
@@ -8,8 +8,8 @@ def apresenta_instrumento(inst):
         "data_loop": inst.data_loop
     }
 
+# Apresenta uma lista de instrumentos
 def apresenta_instrumentos(lista):
-    """Retorna a lista de instrumentos como dicionário"""
     return {
         "instrumentos": [apresenta_instrumento(i) for i in lista]
     }
