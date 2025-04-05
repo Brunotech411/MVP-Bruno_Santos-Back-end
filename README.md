@@ -48,11 +48,11 @@ MVP-Bruno_Santos-Back-end/
 │   └── presenter.py       # Funções que formatam as respostas
 │
 ├── gitignore
+├── Readme                 # Apresentação do projeto
 ├── app.py                 # Aplicação principal Flask
 ├── create_db.py           # Criação da base de dados
 ├── instrumentos.db        # Banco SQLite (gerado automaticamente)
-├── Readme                 # Apresentação do projeto
-├── requirements.txt       # Dependências do projeto
+└── requirements.txt       # Dependências do projeto
 ```
 
 ---
