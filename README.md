@@ -1,4 +1,4 @@
-# 🔧 API de Instrumentação - Loop Teste concluído
+# 🔧 API de Instrumentação - Loop Test concluído
 
 Olá Mestres! Este é o back-end do MVP da sprint desenvolvimento Full Stack Básico (PUC-Rio). A API permite o cadastro, listagem, busca e remoção de instrumentos com loop test concluído, ou seja testados, incluindo o cálculo automático do SPAN (URV - LRV), por exemplo se o range (intervalo de trabalho) de um transmissor de pressão é de LRV 0 a URV 20bar significa que o Span (amplitude do range) é igual a 20bar.
 
@@ -114,6 +114,7 @@ Você poderá testar todas as rotas diretamente no navegador.
 - URV = Upper Range Value
 - Range = É o intervalo total que o instrumento pode medir.
 - Span = É a amplitude do range, ou seja, a diferença entre o valor máximo e o mínimo.
+- Loop test = É o teste de verificação completa de uma malha de instrumentação, desde o transmissor (instrumento) até a sala de controle.
 - Para visualizar o conteúdo da base `instrumentos.db` em forma de tabela, recomenda-se instalar a extensão **SQLite Viewer** no VS Code.
 
 ---
