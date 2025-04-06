@@ -16,14 +16,17 @@ Olá Mestres! Este é o back-end do MVP da sprint desenvolvimento Full Stack Bá
 
 ---
 
-## ⚙️ Tecnologias utilizadas
+## ⚙️ Tecnologias utilizadas (requirements.txt)
 
-- Python 3.11+
-- Flask 2.1.3
-- flask-openapi3 2.1.0
-- Flask-CORS
-- SQLAlchemy
-- SQLite
+Abaixo estão as dependências utilizadas no projeto, com seus respectivos papéis:
+
+- **Flask**: Framework web principal usado para criação da API.
+- **Flask-Cors**: Libera o acesso à API a partir de outro domínio (como o front-end local).
+- **flask-openapi3**: Gera documentação Swagger automaticamente com base em schemas Pydantic.
+- **pydantic**: Define e valida os dados recebidos/enviados pela API com tipagem forte.
+- **SQLAlchemy**: ORM utilizado para manipular e persistir os dados no banco SQLite.
+- **typing_extensions**: Suporte adicional a tipos em versões anteriores do Python.
+- **werkzeug**: Biblioteca base usada internamente pelo Flask para gerenciar requisições.
 
 ---
 
