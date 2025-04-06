@@ -71,7 +71,7 @@ cd MVP-Bruno_Santos-Back-end
 ### 2. Crie e ative o ambiente virtual
 ```bash
 python -m venv v_env1_api
-._env1_api\Scriptsctivate
+v_env1_api\Scripts\activate
 ```
 
 ### 3. Instale as dependências
